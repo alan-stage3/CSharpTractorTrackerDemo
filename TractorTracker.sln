@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TractorTracker.MVC", "TractorTracker.MVC\TractorTracker.MVC.csproj", "{274FB66C-1015-4982-BCBE-CC37A3A3EC82}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TractorTracker.Core", "TractorTracker.Core\TractorTracker.Core.csproj", "{54596D2C-5262-4FB4-A4D8-534C676DBCFD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TractorTracker.DAL", "TractorTracker.DAL\TractorTracker.DAL.csproj", "{DF91292C-32CA-4EF6-B5A4-AD53FB835936}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TractorTracker.BLL", "TractorTracker.BLL\TractorTracker.BLL.csproj", "{FECCBA89-0516-4E05-BCEE-218524FFC44D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{5C9A3D25-6070-4A13-8039-7BA659611525}"
+	ProjectSection(SolutionItems) = preProject
+		SQL\TractorTracker_DDL.sql = SQL\TractorTracker_DDL.sql
+		SQL\TractorTracker_DML.sql = SQL\TractorTracker_DML.sql
+		SQL\TractorTracker_Test_KnownGoodState.sql = SQL\TractorTracker_Test_KnownGoodState.sql
+		SQL\TractorTrackerTest_DDL.sql = SQL\TractorTrackerTest_DDL.sql
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TractorTracker.DAL.Tests", "TractorTracker.DAL.Tests\TractorTracker.DAL.Tests.csproj", "{1D11EA9A-E138-416A-AAEB-EA3DB1BFAB70}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF91292C-32CA-4EF6-B5A4-AD53FB835936} = {DF91292C-32CA-4EF6-B5A4-AD53FB835936}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{274FB66C-1015-4982-BCBE-CC37A3A3EC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274FB66C-1015-4982-BCBE-CC37A3A3EC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274FB66C-1015-4982-BCBE-CC37A3A3EC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274FB66C-1015-4982-BCBE-CC37A3A3EC82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54596D2C-5262-4FB4-A4D8-534C676DBCFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54596D2C-5262-4FB4-A4D8-534C676DBCFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54596D2C-5262-4FB4-A4D8-534C676DBCFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54596D2C-5262-4FB4-A4D8-534C676DBCFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF91292C-32CA-4EF6-B5A4-AD53FB835936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF91292C-32CA-4EF6-B5A4-AD53FB835936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF91292C-32CA-4EF6-B5A4-AD53FB835936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF91292C-32CA-4EF6-B5A4-AD53FB835936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FECCBA89-0516-4E05-BCEE-218524FFC44D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECCBA89-0516-4E05-BCEE-218524FFC44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECCBA89-0516-4E05-BCEE-218524FFC44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECCBA89-0516-4E05-BCEE-218524FFC44D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D11EA9A-E138-416A-AAEB-EA3DB1BFAB70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D11EA9A-E138-416A-AAEB-EA3DB1BFAB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D11EA9A-E138-416A-AAEB-EA3DB1BFAB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D11EA9A-E138-416A-AAEB-EA3DB1BFAB70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DAB0D78-129C-4EFE-A23F-A1B9FF4A191E}
+	EndGlobalSection
+EndGlobal
