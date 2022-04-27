@@ -37,5 +37,82 @@ namespace TractorTracker.MVC.Controllers
 
         }
 
+        [HttpGet]
+        [Route("/api/[controller]/{id}", Name = "GetDriver")]
+        public IActionResult GetDriver(int id)
+        {
+            Result<Driver> result = _driverRepo.Get(id);
+
+            if(result.Success)
+            {
+                if(result.Messages.Count >0)
+                {
+                    return Ok(result.Messages);
+                }
+                return Ok(result.Data);
+            }
+            else
+            {
+                return BadRequest(result.Messages);
+            }
+
+        }
+
+        [HttpPost]
+        public IActionResult AddDriver(Driver driver)
+        {
+            var result = _driverRepo.Add(driver);
+
+            if(result.Success)
+            {
+                return CreatedAtRoute(nameof(GetDriver), new { id = result.Data.driverId }, result.Data);
+            }
+            else
+            {
+                return BadRequest(result.Messages);
+            }
+        }
+
+        [HttpDelete("{driverId}")]
+        public IActionResult DeleteDriver(int driverId)
+        {
+            var findResult = _driverRepo.Get(driverId);
+            if (findResult.Messages.Count > 0)
+            {
+                return NotFound(findResult.Messages);
+            }
+
+            var result = _driverRepo.Delete(driverId);
+
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            else
+            {
+                return BadRequest(result.Messages);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult EditDriver(Driver driver)
+        {
+            var findResult = _driverRepo.Get(driver.driverId);
+            if (findResult.Messages.Count > 0)
+            {
+                return NotFound(findResult.Messages);
+            }
+
+            var result = _driverRepo.Edit(driver);
+            if(result.Success)
+            {
+                return Ok(result.Data);
+            }
+            else
+            {
+                return BadRequest(result.Messages);
+            }
+        }
+
     }
 }
