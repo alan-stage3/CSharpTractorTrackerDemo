@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TractorTracker.DAL.Tests", 
 		{DF91292C-32CA-4EF6-B5A4-AD53FB835936} = {DF91292C-32CA-4EF6-B5A4-AD53FB835936}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TractorTracker.MVC", "TractorTracker.MVC\TractorTracker.MVC.csproj", "{9F026507-4FC5-4AC0-BB14-282F6E3CDC8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{1D11EA9A-E138-416A-AAEB-EA3DB1BFAB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D11EA9A-E138-416A-AAEB-EA3DB1BFAB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D11EA9A-E138-416A-AAEB-EA3DB1BFAB70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F026507-4FC5-4AC0-BB14-282F6E3CDC8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F026507-4FC5-4AC0-BB14-282F6E3CDC8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F026507-4FC5-4AC0-BB14-282F6E3CDC8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F026507-4FC5-4AC0-BB14-282F6E3CDC8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
