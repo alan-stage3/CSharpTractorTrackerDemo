@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TractorTracker.MVC", "TractorTracker.MVC\TractorTracker.MVC.csproj", "{274FB66C-1015-4982-BCBE-CC37A3A3EC82}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TractorTracker.Core", "TractorTracker.Core\TractorTracker.Core.csproj", "{54596D2C-5262-4FB4-A4D8-534C676DBCFD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TractorTracker.DAL", "TractorTracker.DAL\TractorTracker.DAL.csproj", "{DF91292C-32CA-4EF6-B5A4-AD53FB835936}"
@@ -30,10 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{274FB66C-1015-4982-BCBE-CC37A3A3EC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{274FB66C-1015-4982-BCBE-CC37A3A3EC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{274FB66C-1015-4982-BCBE-CC37A3A3EC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{274FB66C-1015-4982-BCBE-CC37A3A3EC82}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54596D2C-5262-4FB4-A4D8-534C676DBCFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54596D2C-5262-4FB4-A4D8-534C676DBCFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54596D2C-5262-4FB4-A4D8-534C676DBCFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
