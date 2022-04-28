@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -87,7 +88,7 @@ namespace TractorTracker.MVC.Controllers
             }
         }
 
-        [HttpDelete("{driverId}")]
+        [HttpDelete("{driverId}"), Authorize]
         public IActionResult DeleteDriver(int driverId)
         {
             var findResult = _driverRepo.Get(driverId);
@@ -108,7 +109,7 @@ namespace TractorTracker.MVC.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut, Authorize]
         public IActionResult EditDriver(ViewDriver viewDriver)
         {
             if (ModelState.IsValid && viewDriver.driverId > 0)
