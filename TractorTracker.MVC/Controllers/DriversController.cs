@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TractorTracker.Core;
 using TractorTracker.Core.Entities;
 using TractorTracker.Core.Interfaces;
+using TractorTracker.MVC.Models;
 
 namespace TractorTracker.MVC.Controllers
 {
@@ -59,17 +60,30 @@ namespace TractorTracker.MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddDriver(Driver driver)
+        public IActionResult AddDriver(ViewDriver viewDriver)
         {
-            var result = _driverRepo.Add(driver);
+            if (ModelState.IsValid)
+            {
+                Driver driver = new Driver
+                {
+                    driverName = viewDriver.driverName,
+                    driverHometown = viewDriver.driverHomeTown
+                };
 
-            if(result.Success)
+                var result = _driverRepo.Add(driver);
+
+                if (result.Success)
+                {
+                    return CreatedAtRoute(nameof(GetDriver), new { id = result.Data.driverId }, result.Data);
+                }
+                else
+                {
+                    return BadRequest(result.Messages);
+                }
+            } else
             {
-                return CreatedAtRoute(nameof(GetDriver), new { id = result.Data.driverId }, result.Data);
-            }
-            else
-            {
-                return BadRequest(result.Messages);
+                return BadRequest(ModelState);
+
             }
         }
 
@@ -95,22 +109,38 @@ namespace TractorTracker.MVC.Controllers
         }
 
         [HttpPut]
-        public IActionResult EditDriver(Driver driver)
+        public IActionResult EditDriver(ViewDriver viewDriver)
         {
-            var findResult = _driverRepo.Get(driver.driverId);
-            if (findResult.Messages.Count > 0)
+            if (ModelState.IsValid && viewDriver.driverId > 0)
             {
-                return NotFound(findResult.Messages);
-            }
+                Driver driver = new Driver
+                {
+                    driverId = viewDriver.driverId,
+                    driverName = viewDriver.driverName,
+                    driverHometown = viewDriver.driverHomeTown
+                };
 
-            var result = _driverRepo.Edit(driver);
-            if(result.Success)
-            {
-                return Ok(result.Data);
+                var findResult = _driverRepo.Get(driver.driverId);
+                if (findResult.Messages.Count > 0)
+                {
+                    return NotFound(findResult.Messages);
+                }
+
+                var result = _driverRepo.Edit(driver);
+                if (result.Success)
+                {
+                    return Ok(result.Data);
+                }
+                else
+                {
+                    return BadRequest(result.Messages);
+                }
             }
             else
             {
-                return BadRequest(result.Messages);
+                if (viewDriver.driverId < 1)
+                    ModelState.AddModelError("driverId", "Invalid Driver ID");
+                return BadRequest(ModelState);
             }
         }
 
